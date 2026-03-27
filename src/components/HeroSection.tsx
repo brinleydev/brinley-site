@@ -114,8 +114,17 @@ const HeroSection = () => {
                     </div>
 
                     {/* Main price */}
-                    <div className="flex items-start gap-1 mb-1">
-                      <span className="text-xl font-display font-black text-primary mt-1.5">$</span>
+                    <div className="flex items-end gap-1 mb-1">
+                      <span
+                        className="text-5xl font-display font-black leading-none mb-0.5"
+                        style={{
+                          background: "linear-gradient(135deg, hsl(var(--foreground)) 40%, hsl(var(--primary)) 100%)",
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                        }}
+                      >
+                        $
+                      </span>
                       <span
                         className="text-6xl font-display font-black leading-none"
                         style={{
