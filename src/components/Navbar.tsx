@@ -26,7 +26,8 @@ const Navbar = () => {
   }, []);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex justify-center pt-4 px-4">
+    // top-7 instead of top-0 to sit below the 28px announcement bar
+    <nav className="fixed top-7 left-0 right-0 z-50 flex justify-center pt-4 px-4">
       <motion.div
         initial={{ y: -20, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
