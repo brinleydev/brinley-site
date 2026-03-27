@@ -1,5 +1,5 @@
 const messages = [
-  "🔥 LIMITED TIME — 20% OFF all packages",
+  "🔥 LIMITED TIME — 17% OFF all packages",
   "🚀 130+ Scripts included",
   "💎 Premium FiveM Server V5 — Now Available",
 ];

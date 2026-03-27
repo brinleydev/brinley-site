@@ -95,12 +95,12 @@ const HeroSection = () => {
 
                   {/* Price block */}
                   <div className="relative">
-                    {/* 20% OFF badge */}
+                    {/* 17% OFF badge */}
                     <div className="absolute -top-1 right-0 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-primary text-primary-foreground font-display font-black text-[11px] tracking-widest uppercase shadow-[0_0_16px_hsl(var(--primary)/0.4)]">
                       <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
                         <path d="M5 1L6.12 3.62L9 4.06L7 6.01L7.47 9L5 7.62L2.53 9L3 6.01L1 4.06L3.88 3.62L5 1Z" fill="currentColor"/>
                       </svg>
-                      20% OFF
+                      17% OFF
                     </div>
 
                     <p className="text-xs text-muted-foreground font-heading tracking-widest uppercase mb-2">
