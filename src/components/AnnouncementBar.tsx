@@ -1,6 +1,5 @@
 const messages = [
   "🔥 LIMITED TIME — 20% OFF all packages",
-  "⚡ Use code BRINLEY20 at checkout",
   "🚀 130+ Scripts included",
   "💎 Premium FiveM Server V5 — Now Available",
 ];
