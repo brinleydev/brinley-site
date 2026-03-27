@@ -94,34 +94,53 @@ const HeroSection = () => {
                 <div className="w-full rounded-2xl border border-border/40 bg-card/80 backdrop-blur-xl p-5 flex flex-col gap-3">
 
                   {/* Price block */}
-                  <div className="relative">
-                    {/* 17% OFF badge */}
-                    <div className="absolute -top-1 right-0 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-primary text-primary-foreground font-display font-black text-[11px] tracking-widest uppercase shadow-[0_0_16px_hsl(var(--primary)/0.4)]">
-                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
-                        <path d="M5 1L6.12 3.62L9 4.06L7 6.01L7.47 9L5 7.62L2.53 9L3 6.01L1 4.06L3.88 3.62L5 1Z" fill="currentColor"/>
-                      </svg>
-                      17% OFF
-                    </div>
-
-                    <p className="text-xs text-muted-foreground font-heading tracking-widest uppercase mb-2">
-                      Limited time price
-                    </p>
-
-                    {/* Prices */}
-                    <div className="flex items-end gap-3">
-                      <span className="text-4xl font-display font-black text-foreground">$125</span>
-                      <div className="flex flex-col mb-1">
-                        <span className="text-sm font-display font-bold text-muted-foreground/50 line-through leading-none">
-                          $150
-                        </span>
-                        <span className="text-[10px] text-primary font-heading font-semibold tracking-wider">
-                          You save $25
-                        </span>
+                  <div className="relative rounded-xl border border-primary/20 bg-primary/5 p-4"
+                    style={{ boxShadow: "inset 0 0 40px hsl(var(--primary)/0.04)" }}
+                  >
+                    {/* Top row: label + badge */}
+                    <div className="flex items-center justify-between mb-3">
+                      <p className="text-[10px] text-muted-foreground font-heading tracking-widest uppercase">
+                        Limited time price
+                      </p>
+                      {/* 17% OFF badge */}
+                      <div className="flex items-center gap-1 px-2 py-0.5 rounded-md border border-primary/40 bg-primary/10 text-primary font-heading font-black text-[10px] tracking-widest uppercase"
+                        style={{ boxShadow: "0 0 12px hsl(var(--primary)/0.2)" }}
+                      >
+                        <svg width="8" height="8" viewBox="0 0 10 10" fill="none">
+                          <path d="M5 1L6.12 3.62L9 4.06L7 6.01L7.47 9L5 7.62L2.53 9L3 6.01L1 4.06L3.88 3.62L5 1Z" fill="currentColor"/>
+                        </svg>
+                        17% OFF
                       </div>
                     </div>
 
-                    <p className="text-xs text-muted-foreground font-body mt-1">
-                      One-time payment · Free updates
+                    {/* Main price */}
+                    <div className="flex items-start gap-1 mb-1">
+                      <span className="text-xl font-display font-black text-primary mt-1.5">$</span>
+                      <span
+                        className="text-6xl font-display font-black leading-none"
+                        style={{
+                          background: "linear-gradient(135deg, hsl(var(--foreground)) 40%, hsl(var(--primary)) 100%)",
+                          WebkitBackgroundClip: "text",
+                          WebkitTextFillColor: "transparent",
+                        }}
+                      >
+                        125
+                      </span>
+                    </div>
+
+                    {/* Old price + savings */}
+                    <div className="flex items-center gap-3">
+                      <span className="text-sm font-display font-bold text-muted-foreground/40 line-through">
+                        $150
+                      </span>
+                      <div className="h-px flex-1 bg-border/30" />
+                      <span className="text-[10px] text-primary font-heading font-bold tracking-wider uppercase">
+                        Save $25
+                      </span>
+                    </div>
+
+                    <p className="text-[10px] text-muted-foreground/60 font-body mt-2">
+                      One-time payment · Free updates included
                     </p>
                   </div>
 
