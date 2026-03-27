@@ -30,7 +30,7 @@ const HeroSection = () => {
         <div className="flex-1 flex items-center">
           <div className="w-full max-w-7xl mx-auto px-4 md:px-8">
 
-            {/* Version pill — above the split */}
+            {/* Version pill */}
             <motion.div
               initial={{ opacity: 0, y: -10 }}
               animate={{ opacity: 1, y: 0 }}
@@ -45,7 +45,7 @@ const HeroSection = () => {
               </div>
             </motion.div>
 
-            {/* Title & description — above both columns */}
+            {/* Title & description */}
             <motion.div
               initial={{ opacity: 0, y: 16 }}
               animate={{ opacity: 1, y: 0 }}
@@ -63,10 +63,10 @@ const HeroSection = () => {
               </p>
             </motion.div>
 
-            {/* Split layout: Video LEFT + Pricing RIGHT — perfectly equal height */}
+            {/* Split layout */}
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-5 items-stretch">
 
-              {/* LEFT: Video only */}
+              {/* LEFT: Video */}
               <motion.div
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -84,7 +84,7 @@ const HeroSection = () => {
                 </div>
               </motion.div>
 
-              {/* RIGHT: Pricing card — same height as video */}
+              {/* RIGHT: Pricing card */}
               <motion.div
                 initial={{ opacity: 0, x: 30 }}
                 animate={{ opacity: 1, x: 0 }}
@@ -93,12 +93,33 @@ const HeroSection = () => {
               >
                 <div className="w-full rounded-2xl border border-border/40 bg-card/80 backdrop-blur-xl p-5 flex flex-col gap-3">
 
-                  {/* Price */}
-                  <div>
-                    <p className="text-xs text-muted-foreground font-heading tracking-widest uppercase mb-1">
-                      One-time price
+                  {/* Price block */}
+                  <div className="relative">
+                    {/* 20% OFF badge */}
+                    <div className="absolute -top-1 right-0 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-primary text-primary-foreground font-display font-black text-[11px] tracking-widest uppercase shadow-[0_0_16px_hsl(var(--primary)/0.4)]">
+                      <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+                        <path d="M5 1L6.12 3.62L9 4.06L7 6.01L7.47 9L5 7.62L2.53 9L3 6.01L1 4.06L3.88 3.62L5 1Z" fill="currentColor"/>
+                      </svg>
+                      20% OFF
+                    </div>
+
+                    <p className="text-xs text-muted-foreground font-heading tracking-widest uppercase mb-2">
+                      Limited time price
                     </p>
-                    <span className="text-4xl font-display font-black text-foreground">$125</span>
+
+                    {/* Prices */}
+                    <div className="flex items-end gap-3">
+                      <span className="text-4xl font-display font-black text-foreground">$125</span>
+                      <div className="flex flex-col mb-1">
+                        <span className="text-sm font-display font-bold text-muted-foreground/50 line-through leading-none">
+                          $150
+                        </span>
+                        <span className="text-[10px] text-primary font-heading font-semibold tracking-wider">
+                          You save $25
+                        </span>
+                      </div>
+                    </div>
+
                     <p className="text-xs text-muted-foreground font-body mt-1">
                       One-time payment · Free updates
                     </p>
@@ -142,7 +163,7 @@ const HeroSection = () => {
                     ))}
                   </div>
 
-                  {/* Trust indicators — pushed to bottom */}
+                  {/* Trust indicators */}
                   <div className="mt-auto pt-3 border-t border-border/20 flex items-center gap-4 text-xs text-muted-foreground font-heading flex-wrap">
                     <div className="flex items-center gap-1.5">
                       <div className="w-1.5 h-1.5 rounded-full bg-primary" />
@@ -161,7 +182,7 @@ const HeroSection = () => {
               </motion.div>
             </div>
 
-            {/* Stats bar — below both panels */}
+            {/* Stats bar */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
