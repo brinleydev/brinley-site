@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import logo from "@/assets/logo.png";
 import { MessageCircle, Youtube } from "lucide-react";
 
@@ -65,7 +66,7 @@ const Footer = () => {
             <ul className="space-y-2.5 text-xs text-muted-foreground font-heading">
               <li><a href="#" className="hover:text-primary transition-colors">Getting Started</a></li>
               <li><a href="#" className="hover:text-primary transition-colors">Documentation</a></li>
-              <li><a href="#" className="hover:text-primary transition-colors">Terms</a></li>
+              <li><Link to="/terms" className="hover:text-primary transition-colors">Terms</Link></li>
               <li><a href="#" className="hover:text-primary transition-colors">Privacy</a></li>
             </ul>
           </div>
