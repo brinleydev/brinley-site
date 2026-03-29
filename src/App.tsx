@@ -7,6 +7,7 @@ import Index from "./pages/Index.tsx";
 import Checkout from "./pages/Checkout.tsx";
 import Documentation from "./pages/Documentation.tsx";
 import FreeScripts from "./pages/FreeScripts.tsx";
+import Terms from "./pages/Terms.tsx";
 import NotFound from "./pages/NotFound.tsx";
 
 const queryClient = new QueryClient();
@@ -22,7 +23,7 @@ const App = () => (
           <Route path="/checkout" element={<Checkout />} />
           <Route path="/docs" element={<Documentation />} />
           <Route path="/free-scripts" element={<FreeScripts />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="/terms" element={<Terms />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>
