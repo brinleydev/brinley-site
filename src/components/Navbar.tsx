@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import logo from "@/assets/logo.png";
@@ -16,7 +16,9 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [activeLink, setActiveLink] = useState("Home");
   const location = useLocation();
+  const navigate = useNavigate();
 
+  const isHomePage = location.pathname === "/";
   const isFreeScriptsPage = location.pathname === "/free-scripts";
 
   useEffect(() => {
@@ -25,8 +27,24 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const handleNavClick = (href: string, label: string) => {
+    setActiveLink(label);
+    setIsOpen(false);
+    if (isHomePage) {
+      // Already on home, just scroll
+      const el = document.querySelector(href);
+      if (el) el.scrollIntoView({ behavior: "smooth" });
+    } else {
+      // Navigate to home then scroll
+      navigate("/");
+      setTimeout(() => {
+        const el = document.querySelector(href);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }, 300);
+    }
+  };
+
   return (
-    // top-7 instead of top-0 to sit below the 28px announcement bar
     <nav className="fixed top-7 left-0 right-0 z-50 flex justify-center pt-4 px-4">
       <motion.div
         initial={{ y: -20, opacity: 0 }}
@@ -55,18 +73,17 @@ const Navbar = () => {
           {/* Desktop center nav */}
           <div className="hidden md:flex items-center gap-0.5">
             {navLinks.map((link) => (
-              <a
+              <button
                 key={link.label}
-                href={isFreeScriptsPage ? `/${link.href}` : link.href}
-                onClick={() => setActiveLink(link.label)}
+                onClick={() => handleNavClick(link.href, link.label)}
                 className={`relative px-3.5 py-1.5 text-[13px] font-heading font-medium rounded-lg transition-all duration-300 ${
-                  activeLink === link.label && !isFreeScriptsPage
+                  activeLink === link.label && isHomePage
                     ? "text-primary-foreground bg-primary/90"
                     : "text-muted-foreground hover:text-foreground hover:bg-card/80"
                 }`}
               >
                 {link.label}
-              </a>
+              </button>
             ))}
             <Link
               to="/free-scripts"
@@ -121,18 +138,17 @@ const Navbar = () => {
             >
               <div className="px-4 py-4 flex flex-col gap-0.5">
                 {navLinks.map((link) => (
-                  <a
+                  <button
                     key={link.label}
-                    href={isFreeScriptsPage ? `/${link.href}` : link.href}
-                    onClick={() => { setActiveLink(link.label); setIsOpen(false); }}
-                    className={`py-2.5 px-3 text-sm font-heading font-medium rounded-lg transition-colors ${
-                      activeLink === link.label && !isFreeScriptsPage
+                    onClick={() => handleNavClick(link.href, link.label)}
+                    className={`py-2.5 px-3 text-sm font-heading font-medium rounded-lg transition-colors text-left ${
+                      activeLink === link.label && isHomePage
                         ? "text-primary-foreground bg-primary/90"
                         : "text-muted-foreground hover:text-foreground hover:bg-card/60"
                     }`}
                   >
                     {link.label}
-                  </a>
+                  </button>
                 ))}
                 <Link
                   to="/free-scripts"
