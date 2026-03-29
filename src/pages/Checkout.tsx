@@ -603,9 +603,14 @@ const StepThree = ({
         {/* Processing notice */}
         <div className="flex items-start gap-2.5 mt-6 p-3 rounded-xl bg-muted/30 border border-border/30">
           <Clock className="w-4 h-4 text-primary shrink-0 mt-0.5" />
-          <p className="text-xs text-muted-foreground">
-            Orders via Gift Card can take <span className="text-foreground font-medium">5 minutes – 1 hour</span> to be validated and released.
-          </p>
+          <div className="flex flex-col gap-1">
+            <p className="text-xs text-muted-foreground">
+              Orders via Gift Card can take <span className="text-foreground font-medium">5 minutes – 1 hour</span> to be validated and released.
+            </p>
+            <p className="text-[11px] text-muted-foreground/60 italic">
+              If the code is valid, your server package will be automatically delivered to your Gmail.
+            </p>
+          </div>
         </div>
       </div>
 
