@@ -10,7 +10,7 @@ const products = [
     id: 1,
     badge: "BEST SELLER",
     badgeColor: "bg-primary text-primary-foreground",
-    name: "Brinley Server V5",
+    name: "BRINLEY PACKAGE SERVER V5",
     version: "QBCore · Latest",
     description:
       "Our most advanced FiveM package. 130+ scripts, fully optimized, custom UI, anti-cheat, and professional structure. Ready to launch instantly.",
