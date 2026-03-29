@@ -43,7 +43,7 @@ const products = [
       { icon: Shield, label: "Secure" },
     ],
     features: ["NoPixel 4.0 Style", "Custom Scripts", "Economy System", "Setup Support"],
-    youtubeId: "6Gn2PQXKCOM",
+    youtubeId: "Iuc3aKob1CE",
     highlight: false,
   },
   {
@@ -63,7 +63,7 @@ const products = [
       { icon: Shield, label: "Tested" },
     ],
     features: ["NoPixel 3.5 Style", "Custom Framework", "Business System", "Full Support"],
-    youtubeId: "6Gn2PQXKCOM",
+    youtubeId: "Du3IecdYIr4",
     highlight: false,
   },
 ];
