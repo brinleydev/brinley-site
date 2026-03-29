@@ -71,16 +71,29 @@ const HeroSection = () => {
                 initial={{ opacity: 0, x: -30 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.7, delay: 0.2 }}
-                className="lg:col-span-8 rounded-xl overflow-hidden"
+                className="lg:col-span-8 flex"
               >
-                <div className="aspect-video w-full h-full">
-                  <iframe
-                    src="https://www.youtube.com/embed/RRcd0XYYdIk"
-                    title="Brinley Development — Server Preview"
-                    className="w-full h-full block"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  />
+                <div className="w-full rounded-2xl border border-border/40 bg-card/80 backdrop-blur-xl p-3 flex flex-col gap-2">
+                  {/* Card top bar */}
+                  <div className="flex items-center justify-between px-1">
+                    <div className="flex items-center gap-2">
+                      <div className="w-2 h-2 rounded-full bg-primary animate-pulse" />
+                      <span className="text-[10px] font-heading font-semibold text-muted-foreground tracking-widest uppercase">Server Preview</span>
+                    </div>
+                    <span className="text-[10px] font-heading text-primary/60 tracking-wider uppercase">Brinley V5</span>
+                  </div>
+                  {/* Video */}
+                  <div className="rounded-xl overflow-hidden aspect-video w-full"
+                    style={{ boxShadow: "0 0 0 1px hsl(var(--border)/0.3)" }}
+                  >
+                    <iframe
+                      src="https://www.youtube.com/embed/RRcd0XYYdIk"
+                      title="Brinley Development — Server Preview"
+                      className="w-full h-full block"
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                      allowFullScreen
+                    />
+                  </div>
                 </div>
               </motion.div>
 
