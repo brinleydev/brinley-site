@@ -10,7 +10,7 @@ const products = [
     id: 1,
     badge: "BEST SELLER",
     badgeColor: "bg-primary text-primary-foreground",
-    name: "BRINLEY PACKAGE SERVER V5",
+    name: "Brinley Server V5",
     version: "QBCore · Latest",
     description:
       "Our most advanced FiveM package. 130+ scripts, fully optimized, custom UI, anti-cheat, and professional structure. Ready to launch instantly.",
@@ -24,6 +24,7 @@ const products = [
     ],
     features: ["130+ Scripts", "Custom UI", "24/7 Support", "Free Updates"],
     youtubeId: "RRcd0XYYdIk",
+    slug: "brinley-v5",
     highlight: true,
   },
   {
@@ -44,6 +45,7 @@ const products = [
     ],
     features: ["NoPixel 4.0 Style", "Custom Scripts", "Economy System", "Setup Support"],
     youtubeId: "Iuc3aKob1CE",
+    slug: "nopixel-4.0",
     highlight: false,
   },
   {
@@ -64,11 +66,12 @@ const products = [
     ],
     features: ["NoPixel 3.5 Style", "Custom Framework", "Business System", "Full Support"],
     youtubeId: "Du3IecdYIr4",
+    slug: "nopixel-3.5",
     highlight: false,
   },
 ];
 
-const ProductCard = ({ product, index }: { product: typeof products[0]; index: number }) => (
+const ProductCard = ({ product, index }: { product: typeof products[0] & { slug: string }; index: number }) => (
   <motion.div
     initial={{ opacity: 0, y: 32 }}
     whileInView={{ opacity: 1, y: 0 }}
@@ -156,7 +159,7 @@ const ProductCard = ({ product, index }: { product: typeof products[0]; index: n
           <p className="text-[10px] text-muted-foreground/50 font-body">One-time · Free updates</p>
         </div>
         <Link
-          to="/checkout"
+          to={`/checkout?product=${product.slug}`}
           className="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-primary text-primary-foreground font-display font-bold text-xs tracking-wider hover:opacity-90 transition-all glow-cyan-sm whitespace-nowrap"
         >
           <ShoppingCart size={13} />
