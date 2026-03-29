@@ -17,6 +17,7 @@ const PRODUCTS: Record<string, {
   subtitle: string;
   price: number;
   originalPrice: number | null;
+  g2aUrl: string;
   features: string[];
   included: { icon: string; text: string }[];
   minValue: number;
@@ -26,6 +27,7 @@ const PRODUCTS: Record<string, {
     subtitle: "FiveM Package",
     price: 125,
     originalPrice: 150,
+    g2aUrl: "https://www.g2a.com/fr/binance-gift-card-125-usdt-key-i10000301475060",
     features: [
       "Sleek & Professional UI",
       "Advanced Illegal System",
@@ -49,6 +51,7 @@ const PRODUCTS: Record<string, {
     subtitle: "NoPixel 4.0 Inspired",
     price: 100,
     originalPrice: null,
+    g2aUrl: "https://www.g2a.com/fr/binance-gift-card-100-usdt-key-i10000301475001",
     features: [
       "NoPixel 4.0 Style UI",
       "Advanced Custom Scripts",
@@ -72,6 +75,7 @@ const PRODUCTS: Record<string, {
     subtitle: "NoPixel 3.5 Inspired",
     price: 80,
     originalPrice: null,
+    g2aUrl: "https://www.g2a.com/fr/binance-gift-card-80-usdt-key-i10000301475062",
     features: [
       "NoPixel 3.5 Style Framework",
       "Custom Scripts & Jobs",
@@ -383,7 +387,7 @@ const StepThree = ({ product, discord, setDiscord, email, setEmail, giftCodes, s
           <h3 className="text-sm font-heading font-semibold text-foreground flex items-center gap-2">🏪 How to Purchase (G2A Gift Card)</h3>
           <div className="space-y-3">
             {[
-              <> Go to this website and buy the gift card:{" "}<a href="https://www.g2a.com/fr/binance-gift-card-125-usdt-key-i10000301475060" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline inline-flex items-center gap-1">g2a.com/binance-gift-card <ExternalLink className="w-3 h-3" /></a></>,
+              <> Go to this website and buy the gift card:{" "}<a href={product.g2aUrl} target="_blank" rel="noopener noreferrer" className="text-primary hover:underline inline-flex items-center gap-1">g2a.com/binance-gift-card <ExternalLink className="w-3 h-3" /></a></>,
               <> After the purchase, you will receive a <span className="text-foreground font-medium">gift card code</span> 🎁</>,
               <> Send me the gift card code, and I'll proceed immediately with your order 🚀</>,
             ].map((content, i) => (
