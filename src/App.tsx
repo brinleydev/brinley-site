@@ -8,6 +8,7 @@ import Checkout from "./pages/Checkout.tsx";
 import Documentation from "./pages/Documentation.tsx";
 import FreeScripts from "./pages/FreeScripts.tsx";
 import Terms from "./pages/Terms.tsx";
+import Products from "./pages/Products.tsx";
 import NotFound from "./pages/NotFound.tsx";
 import ScrollToTop from "./components/ScrollToTop.tsx";
 
@@ -26,6 +27,7 @@ const App = () => (
           <Route path="/docs" element={<Documentation />} />
           <Route path="/free-scripts" element={<FreeScripts />} />
           <Route path="/terms" element={<Terms />} />
+          <Route path="/products" element={<Products />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
       </BrowserRouter>

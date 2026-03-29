@@ -20,6 +20,7 @@ const Navbar = () => {
 
   const isHomePage = location.pathname === "/";
   const isFreeScriptsPage = location.pathname === "/free-scripts";
+  const isProductsPage = location.pathname === "/products";
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -31,11 +32,9 @@ const Navbar = () => {
     setActiveLink(label);
     setIsOpen(false);
     if (isHomePage) {
-      // Already on home, just scroll
       const el = document.querySelector(href);
       if (el) el.scrollIntoView({ behavior: "smooth" });
     } else {
-      // Navigate to home then scroll
       navigate("/");
       setTimeout(() => {
         const el = document.querySelector(href);
@@ -61,16 +60,12 @@ const Navbar = () => {
           <Link to="/" className="flex items-center gap-2.5 group shrink-0">
             <img src={logo} alt="Brinley" className="h-7 w-7" />
             <div className="flex items-baseline gap-1">
-              <span className="font-display text-sm font-black tracking-[0.2em] text-foreground">
-                BRINLEY
-              </span>
-              <span className="hidden sm:inline text-[10px] font-heading tracking-[0.15em] text-primary/60 font-semibold">
-                DEV
-              </span>
+              <span className="font-display text-sm font-black tracking-[0.2em] text-foreground">BRINLEY</span>
+              <span className="hidden sm:inline text-[10px] font-heading tracking-[0.15em] text-primary/60 font-semibold">DEV</span>
             </div>
           </Link>
 
-          {/* Desktop center nav */}
+          {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-0.5">
             {navLinks.map((link) => (
               <button
@@ -85,6 +80,16 @@ const Navbar = () => {
                 {link.label}
               </button>
             ))}
+            <Link
+              to="/products"
+              className={`relative px-3.5 py-1.5 text-[13px] font-heading font-medium rounded-lg transition-all duration-300 ${
+                isProductsPage
+                  ? "text-primary-foreground bg-primary/90"
+                  : "text-muted-foreground hover:text-foreground hover:bg-card/80"
+              }`}
+            >
+              Products
+            </Link>
             <Link
               to="/free-scripts"
               className={`relative px-3.5 py-1.5 text-[13px] font-heading font-medium rounded-lg transition-all duration-300 ${
@@ -105,15 +110,13 @@ const Navbar = () => {
               rel="noopener noreferrer"
               className="px-3 py-1.5 text-[12px] font-heading font-semibold text-muted-foreground hover:text-foreground rounded-lg hover:bg-card/60 transition-all duration-300 flex items-center gap-1"
             >
-              Discord
-              <ArrowUpRight size={10} className="opacity-40" />
+              Discord <ArrowUpRight size={10} className="opacity-40" />
             </a>
             <Link
               to="/docs"
               className="px-3 py-1.5 text-[12px] font-heading font-semibold text-muted-foreground hover:text-foreground rounded-lg hover:bg-card/60 transition-all duration-300 flex items-center gap-1"
             >
-              Docs
-              <ArrowUpRight size={10} className="opacity-40" />
+              Docs <ArrowUpRight size={10} className="opacity-40" />
             </Link>
           </div>
 
@@ -151,17 +154,23 @@ const Navbar = () => {
                   </button>
                 ))}
                 <Link
+                  to="/products"
+                  onClick={() => setIsOpen(false)}
+                  className={`py-2.5 px-3 text-sm font-heading font-medium rounded-lg transition-colors ${
+                    isProductsPage ? "text-primary-foreground bg-primary/90" : "text-muted-foreground hover:text-foreground hover:bg-card/60"
+                  }`}
+                >
+                  Products
+                </Link>
+                <Link
                   to="/free-scripts"
                   onClick={() => setIsOpen(false)}
                   className={`py-2.5 px-3 text-sm font-heading font-medium rounded-lg transition-colors ${
-                    isFreeScriptsPage
-                      ? "text-primary-foreground bg-primary/90"
-                      : "text-muted-foreground hover:text-foreground hover:bg-card/60"
+                    isFreeScriptsPage ? "text-primary-foreground bg-primary/90" : "text-muted-foreground hover:text-foreground hover:bg-card/60"
                   }`}
                 >
                   Free Scripts
                 </Link>
-
                 <div className="h-px bg-border/20 my-2" />
                 <a
                   href="https://discord.gg/MeuZy3Kd"
